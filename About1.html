@@ -12,19 +12,8 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
     <style>
-        .explaination {
-            background-image: linear-gradient(to bottom, #fff, #fffbd1, #ddb4c0);
-            height: max-content;
-            border: 0px;
-            padding: 0px;
-            max-width: 1900px;
-            padding: 20px;
-            display: -webkit-flex;
-            display: -ms-flexbox;
-            display: flex;
-        }
-        
         .body {
             max-width: 100vw;
         }
@@ -39,10 +28,79 @@
             padding: 8px 16px;
             text-decoration: none;
         }
+        
+        .carousel-caption {
+            right: 0%;
+        }
+        
+        a:hover {
+            text-decoration: none;
+        }
+        
+        a>h1:hover {
+            color: maroon;
+        }
+        
+        .commitee_image {
+            margin-right: 20px;
+            width: 25vw;
+            box-shadow: 10px 10px 5px #aaaaaa;
+        }
+        
+        .bg-modal {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 0;
+            justify-content: center;
+            align-items: center;
+            display: none;
+        }
+        
+        .modal-contents {
+            width: 500px;
+            height: fit-content;
+            background-color: white;
+            opacity: 1;
+            border-radius: 4px;
+            padding: 20px;
+            position: relative;
+        }
+        
+        .close {
+            position: absolute;
+            top: 0;
+            right: 14px;
+            font-size: 42px;
+            transform: rotate(45deg);
+            cursor: pointer;
+        }
+        
+        @media only screen and (max-width:900px) {
+            .commitee_image {
+                width: 80vw;
+                height: auto;
+                margin-bottom: 20px;
+            }
+            .commitee_head {
+                font-size: 40px;
+                font-weight: bold;
+                text-align: center;
+            }
+        }
     </style>
 
-</head>
+    <script>
+        document.getElementById('info').addEventListener('click', function() {
+            document.querySelector('.bg-modal').style.display = "flex";
+        });
 
+        document.querySelector('.close').addEventListener('click', function() {
+            document.querySelector('.bg-modal').style.display = "none";
+        });
+    </script>
+</head>
 
 <body>
     <header>
@@ -86,80 +144,162 @@
                     </div>
                     <div class="carousel-caption justify-content-center ">
                         <div class="col-10 align-center align-top ">
-                            <div class="mbr-section-btn " buttons=" 0 "><a class="btn display-4 btn-dark " href="# " style="margin: 10px;">Info  </a><a class="btn display-4 btn-dark " href="# " style="margin: 10px;">  Register </a></div>
+                            <div class="mbr-section-btn " buttons=" 0 ">
+                                <a class=" button btn display-4 btn-dark " href="#" id="info" style=" margin: 10px; ">Info </a><a class="btn display-4 btn-dark " id="register " href=" # " style="margin: 10px; ">  Register </a></div>
+
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container-fluid">
-        <div class="row" style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00;">
-            <img src="images/bg.PNG" alt="img-responsive" style="margin-right:20px;width:25vw; box-shadow: 10px 10px 5px #aaaaaa;" />
-            <div class=" content " style="padding-left: 20px;width:66vw;">
-                <a href="#" style=color:black;>
-                    <h1>Codex</h1>
+    <div class="container-fluid ">
+        <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+            <img class="commitee_image img-responsive " src=" images/codex_image.jfif " alt="img-responsive " />
+            <div class=" content " style="padding-left: 20px;width:66vw; ">
+                <a href="# " style=color:black;>
+                    <h1 class="commitee_head ">Codex</h1>
                 </a>
-                <p>be a part of our team</p>
+                <p><b>Founder’s Talk:</b> While I have always been excited about all innovations in technology as a young computer engineer, some things bothered me. My primary concern is the ever increasing gap between industry standards and curriculum.
+                    Companies spend a huge amount to train students who then are of value to them. While our education system provides reasonable knowledge in all the aspects of computation, we still lack in their Application. CodeX is, therefore, an
+                    initiative to taper the gap in knowledge required by our industries and that promulgated to the students at SFIT. We, at SFIT, engage students with new technologies, coding strategies, and industry standards, so we together can contribute
+                    towards the realization of India's Dream in Technological Advancement.</p>
             </div>
         </div>
-        <div class="row" style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00;">
-            <div class=" content " style="padding-left: 20px; padding-right: 20X; width:66vw;">
-                <a href="#" style=color:black;>
-                    <h1>ITSA</h1>
+        <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+            <div class=" content " style="padding-left: 20px; padding-right: 20X; width:66vw; ">
+                <a href="# " style=color:black;>
+                    <h1 class="commitee_head ">ITSA</h1>
                 </a>
-                <p>be a part of our team</p>
+                <p>
+                    ITSA is a departmental organization for Information Technology. Founded in the year 2011-12, our committee organizes events to bridge the gap between classroom education and the technical skills required by students to be industry ready. Our workshops
+                    foster students’ exposure to leading domains in technology to offer a headstart. We focus on holistic growth, so our students become complete engineers.
+                </p>
             </div>
-            <img src="images/bg.PNG" alt="img-responsive" style="margin-right:20px;width:25vw; box-shadow: 10px 10px 5px #aaaaaa;" />
+            <img class="commitee_image img-responsive " src="images/itsa_image.png " alt="img-responsive " />
 
         </div>
-        <div class="row" style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00;">
-            <img src="images/bg.PNG" alt="img-responsive" style="margin-right:20px;width:25vw; box-shadow: 10px 10px 5px #aaaaaa;" />
-            <div class=" content " style="padding-left: 20px;width:66vw;">
-                <a href="#" style=color:black;>
-                    <h1>CSI</h1>
+        <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+            <img class="commitee_image img-responsive " src="images/CSI_IMAGE.jfif " alt="img-responsive " />
+            <div class=" content " style="padding-left: 20px;width:66vw; ">
+                <a href="# " style=color:black;>
+                    <h1 class="commitee_head ">CSI</h1>
                 </a>
-                <p>be a part of our team</p>
+                <p>
+                    CSI is the largest and one of the most professionally managed association of India for CS and IT professionals. CSI SFIT, since its inception, has proven to be a great source of knowledge by providing hands-on technical training and has worked towards
+                    the goal of transforming students into technical and competent professionals. It conducts events such as technical workshops, informative seminars, conferences, industry-academia interactions, technical competitions, student initiative
+                    programs and industrial visits which prove to be a gateway to technical expertise.
+                </p>
             </div>
         </div>
-        <div class="row" style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00;">
-            <div class=" content " style="padding-left: 20px;width:66vw;">
-                <a href="#" style=color:black;>
-                    <h1>ISTE</h1>
+        <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+            <div class=" content " style="padding-left: 20px;width:66vw; ">
+                <a href="# " style=color:black;>
+                    <h1 class="commitee_head ">ISTE</h1>
                 </a>
                 <p>be a part of our team</p>
             </div>
-            <img src="images/bg.PNG" alt="img-responsive" style="margin-right:20px;width:25vw; box-shadow: 10px 10px 5px #aaaaaa;" />
+            <img class="commitee_image img-responsive " class="commitee_image " src="images/bg.PNG " alt="img-responsive " />
 
         </div>
-        <div class="row" style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00;">
-            <img src="images/bg.PNG" alt="img-responsive" style="margin-right:20px;width:25vw; box-shadow: 10px 10px 5px #aaaaaa;" />
-            <div class=" content " style="padding-left: 20px;width:66vw;">
-                <a href="#" style=color:black;>
-                    <h1>MESA</h1>
+        <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+            <img class="commitee_image img-responsive " src="images/mesa.jpeg " alt="img-responsive " />
+            <div class=" content " style="padding-left: 20px;width:66vw; ">
+                <a href="# " style=color:black;>
+                    <h1 class="commitee_head ">MESA</h1>
                 </a>
-                <p>be a part of our team</p>
+                <p>
+                    MESA is the association for mechanical engineering students that was founded in the year 20192020 MESA acts as a bridge between the academics and the practical industry experience. It helps in building aptitude and attitude suitable for demands of today's
+                    industries with the help of seminars, hands-on-workshops and visits to various exhibitions and industries.
+                </p>
             </div>
         </div>
-        <div class="row" style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00;">
-            <div class=" content " style="padding-left: 20px;width:66vw;">
-                <a href="#" style=color:black;>
-                    <h1>ISSB</h1>
+        <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+            <div class=" content " style="padding-left: 20px;width:66vw; ">
+                <a href="# " style=color:black;>
+                    <h1 class="commitee_head ">ISSB</h1>
                 </a>
-                <p>be a part of our team</p>
+                <p>
+                    The Institute of Electrical and Electronics Engineers (IEEE) is a professional association headquartered in New York City that is dedicated to advancing technological innovation and excellence. The ISSB branch functions @SFIT and the purpose of the organization
+                    is to achieve overall development of students.
+                </p>
             </div>
-            <img src="images/bg.PNG" alt="img-responsive" style="margin-right:20px;width:25vw; box-shadow: 10px 10px 5px #aaaaaa;" />
+            <img class="commitee_image " src="images/issb_image.png " alt="img-responsive " />
 
         </div>
-        <div class="row" style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00;">
+        <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
 
-            <img src="images/bg.PNG" alt="img-responsive" style="margin-right:20px;width:25vw; box-shadow: 10px 10px 5px #aaaaaa;" />
-            <div class=" content " style="padding-left: 20px;width:66vw;">
-                <a href="#" style=color:black;>
-                    <h1>EESA</h1>
+            <img class="commitee_image " src="images/eesa.jpeg " alt="img-responsive " />
+            <div class=" content " style="padding-left: 20px;width:66vw; ">
+                <a href="# " style=color:black;>
+                    <h1 class="commitee_head ">EESA</h1>
                 </a>
-                <p>be a part of our team</p>
+                <p>
+                    The prime motto of the Electrical Engineering department is to provide quality education through the student-centered teaching methodology. The students are given a strong foundation in Electrical Engineering along with the problem-solving techniques
+                    which will be helpful in clearing competitive exams like GATE, which is a qualified test for government jobs. The department encourages our students to develop new project ideas, which would be useful in the day to day life. They are
+                    also encouraged to undergo winter/summer internship in companies related to electrical stream. While the faculty members train the students to excel in various fields with the help of all modern teaching methods and advanced laboratory
+                    facilities, the Electrical Engineering Students Association (EESA) organizes various Competitions, Seminars, Industrial Visits, and guest lectures for the students. The primary focus of EESA is to add more fun and value to the already
+                    high-quality teachings provided by the faculty members by organizing such events. This helps bridge the gap between academics and industry as well as inculcate a sense of responsibility and develop qualities like competitiveness and
+                    initiative amongst them.
+                </p>
             </div>
+        </div>
+        <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+            <div class=" content " style="padding-left: 20px;width:66vw; ">
+                <a href="# " style=color:black;>
+                    <h1 class="commitee_head ">NSS</h1>
+                </a>
+                <p>
+                    NSS means National Service Scheme. The program aims to inculcate social welfare in students and to provide service to society without bias. NSS primarily focuses on personality development through community service NSS is the only committee in SFIT which
+                    is purely non-technical and which gives you experiences outside the college. Through NSS you get to organise and be a part of exciting events like flashmobs, blood donations, plantations, cleanups, visits to oldage homes and various
+                    workshops like self defence, yoga, sexual abuse and the ultimate NSS camp. It is a 7 day camp organised to experience the village life style and help them with their work. Benefits of attending the camp: You understand ground realities
+                    Discipline Get rid of stage fear Time management You learn to socialise Learn the fact that “sharing is caring” And most importantly it is a one time experience and you will definitely cherish all the memories forever By being a part
+                    of NSS you will also develop skills of teamwork, confidence, public speaking, time management and most importantly putting the needs of others before yours. You get know society very closely, meet new people, understand their needs
+                    do good in whatever means possible.
+                </p>
+            </div>
+            <img class="commitee_image " src="images/bg.PNG " alt="img-responsive " />
+
+        </div>
+
+    </div>
+    <div class="bg-modal">
+        <div class="modal-contents">
+            <div class="close">+</div>
+
+            <label id="event_name" style="text-align:center; "><strong>Event Name</Strong></label>
+
+            <div id="date ">
+                <label>Start Date :</label>
+                <label id="start_date "></label>
+                <br>
+                <label>End Date : </label>
+                <label id="end_date "></label>
+            </div>
+            <div>
+                <label>Event Category : </label>
+                <label id="event_category "></label>
+            </div>
+
+            <div>
+                <label>Information</label>
+                <label id="information "></label>
+            </div>
+            <div>
+                <label>Speaker</label>
+                <label id="speaker "></label>
+            </div>
+            <div>
+                <label>Contact Person</label>
+                <br>
+                <label>Name : </label>
+                <label id="contact_name "></label>
+                <br>
+                <label>Phone No:</label>
+                <label id="phone_no "></label>
+            </div>
+
+
         </div>
 
     </div>
