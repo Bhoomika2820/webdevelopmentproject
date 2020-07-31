@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <!--To make site responsive -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href="css/home.css">
     <!--Including font awesome icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Bootstrap CDN link and scripts-->
@@ -13,93 +14,7 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-    <style>
-        .body {
-            max-width: 100vw;
-        }
-        
-        .footer {
-            max-width: 100vw;
-        }
-        
-        li {
-            display: block;
-            color: #000;
-            padding: 8px 16px;
-            text-decoration: none;
-        }
-        
-        .carousel-caption {
-            right: 0%;
-        }
-        
-        a:hover {
-            text-decoration: none;
-        }
-        
-        a>h1:hover {
-            color: maroon;
-        }
-        
-        .commitee_image {
-            margin-right: 20px;
-            width: 25vw;
-            box-shadow: 10px 10px 5px #aaaaaa;
-        }
-        
-        .bg-modal {
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7);
-            position: absolute;
-            top: 0;
-            justify-content: center;
-            align-items: center;
-            display: none;
-        }
-        
-        .modal-contents {
-            width: 500px;
-            height: fit-content;
-            background-color: white;
-            opacity: 1;
-            border-radius: 4px;
-            padding: 20px;
-            position: relative;
-        }
-        
-        .close {
-            position: absolute;
-            top: 0;
-            right: 14px;
-            font-size: 42px;
-            transform: rotate(45deg);
-            cursor: pointer;
-        }
-        
-        @media only screen and (max-width:900px) {
-            .commitee_image {
-                width: 80vw;
-                height: auto;
-                margin-bottom: 20px;
-            }
-            .commitee_head {
-                font-size: 40px;
-                font-weight: bold;
-                text-align: center;
-            }
-        }
-    </style>
 
-    <script>
-        document.getElementById('info').addEventListener('click', function() {
-            document.querySelector('.bg-modal').style.display = "flex";
-        });
-
-        document.querySelector('.close').addEventListener('click', function() {
-            document.querySelector('.bg-modal').style.display = "none";
-        });
-    </script>
 </head>
 
 <body>
@@ -116,19 +31,11 @@
                         <li class="nav-item active">
                             <a class="nav-link" href="About1.html">Home<span class="sr-only"></span></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="add_event.html">Add event</a>
+                        <li class="nav-item" style="cursor: pointer;">
+                            <a class="nav-link" onclick="document.querySelector('.modal1').style.display = 'block' " style="width:auto;">Add event</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <form class="form-inline my-2 my-lg-0 justify-content-between ">
-                                <input class="form-control mr-sm-2 " type="username" aria-label="Search " id="username" placeholder=" Username " style="width:250px; font-size: medium; ">
-                                <input class="form-control mr-sm-2 " type="password" aria-label="Search " id="password" placeholder="Password " style="width:250px; font-size: medium; ">
-                                <button class="btn btn-outline my-2 my-sm-0 " type="submit " id="login" style="background-color:#1D2951 ; color:white"><strong>Login </strong><i class="fa fa-sign-in" aria-hidden="true"></i> </button>
-                            </form>
-                        </li>
-                    </ul>
+
                 </div>
             </nav>
 
@@ -139,13 +46,15 @@
         <div class="row ">
             <div class="carousel slide carousel-fade " style="position: relative;">
                 <div class="image_wrapper ">
-                    <div class="mbr-overlay "><img src="images/bg.PNG" class="img-fluid img-responsive" alt="Responsive image" style="width:100vw;align-items: center; ">
+                    <div class="mbr-overlay "><img src="images/bg.PNG" class="img-fluid img-responsive" alt="Responsive image" style="width:100vw;height:100%;align-items: center;justify-content: center; ">
 
                     </div>
                     <div class="carousel-caption justify-content-center ">
                         <div class="col-10 align-center align-top ">
                             <div class="mbr-section-btn " buttons=" 0 ">
-                                <a class=" button btn display-4 btn-dark " href="#" id="info" style=" margin: 10px; ">Info </a><a class="btn display-4 btn-dark " id="register " href=" # " style="margin: 10px; ">  Register </a></div>
+                                <a class="btn display-4 btn-dark " href="#" id="info" onclick="document.querySelector('.bg-modal').style.display = 'flex' " style=" margin: 10px; ">Info </a>
+                                <a class="btn display-4 btn-dark " id="register " href=" # " style="margin: 10px; ">  Register </a>
+                            </div>
 
                         </div>
                     </div>
@@ -197,9 +106,11 @@
                 <a href="# " style=color:black;>
                     <h1 class="commitee_head ">ISTE</h1>
                 </a>
-                <p>be a part of our team</p>
+                <p>The Indian Society for Technical Education (ISTE) is the leading National Professional non-profit making Society for the Technical Education System in our country with the motto of Career Development of Teachers and Personality Development
+                    of Students and overall development of our Technical Education System.  At present, ISTE has a very large and an effective membership base consisting of more than 1,02,985 Life Members, 5,54,094 Student Members,  2410 Institutional
+                    Members (including IITs, IISc.., NITs and other leading technical institutions), 1214 Faculty Chapters and 1322 Students’ Chapters and 17 Sections throughout the country.</p>
             </div>
-            <img class="commitee_image img-responsive " class="commitee_image " src="images/bg.PNG " alt="img-responsive " />
+            <img class="commitee_image img-responsive " class="commitee_image " src="images/iste.jpeg " alt="img-responsive " />
 
         </div>
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
@@ -258,16 +169,17 @@
                     do good in whatever means possible.
                 </p>
             </div>
-            <img class="commitee_image " src="images/bg.PNG " alt="img-responsive " />
+            <img class="commitee_image " src="images/nss.jpeg " alt="img-responsive " />
 
         </div>
 
     </div>
     <div class="bg-modal">
-        <div class="modal-contents">
-            <div class="close">+</div>
+        <div class="modal-contents animate ">
+            <span onclick="document.querySelector( '.bg-modal').style.display='none' " class="close">&times;</span>
 
-            <label id="event_name" style="text-align:center; "><strong>Event Name</Strong></label>
+
+            <label id="event_name " style="text-align:center; "><strong>Event Name</Strong></label>
 
             <div id="date ">
                 <label>Start Date :</label>
@@ -298,10 +210,28 @@
                 <label>Phone No:</label>
                 <label id="phone_no "></label>
             </div>
-
-
         </div>
 
+    </div>
+    <div id="id01" class="modal1">
+
+        <form class="modal-content1 animate" action="php/login_page.php" method="post">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+                <img src="images/profile_pic.svg" alt="Avatar" class="avatar">
+            </div>
+
+            <div class="container">
+                <label for="uname"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="uname" required>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="psw" required>
+
+                <button class="button" type=" submit ">Login <i class="fa fa-sign-in " aria-hidden="true "></i></button>
+
+            </div>
+        </form>
     </div>
 </body>
 
