@@ -32,7 +32,7 @@
                             <a class="nav-link" href="About1.html">Home<span class="sr-only"></span></a>
                         </li>
                         <li class="nav-item" style="cursor: pointer;">
-                            <a class="nav-link" onclick="document.querySelector('.modal1').style.display = 'block' " style="width:auto;">Add event</a>
+                            <a class="nav-link" onclick="document.querySelector('.modal1').style.display = 'block'; document.querySelector('body').style.overflow = 'hidden'" style="width:auto;">Add event</a>
                         </li>
                     </ul>
 
@@ -217,7 +217,7 @@
 
         <form class="modal-content1 animate" action="php/login_page.php" method="post">
             <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close">&times;</span>
+                <span onclick="document.getElementById('id01').style.display='none'; document.querySelector('body').style.overflow = 'auto'" class="close">&times;</span>
                 <img src="images/profile_pic.svg" alt="Avatar" class="avatar">
             </div>
 
@@ -228,7 +228,7 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
 
-                <button class="button" type=" submit ">Login <i class="fa fa-sign-in " aria-hidden="true "></i></button>
+                <button id="login" class="button" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
 
             </div>
         </form>
@@ -250,5 +250,4 @@
     <div class="footer-copyright flex-center text-center py-1 " style="background-color:#22305f; ;color:white; ">© 2020 Copyright
     </div>
 </footer>
-
 </html>
