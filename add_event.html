@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 
+
 <head>
     <meta charset="UTF-8">
     <!--To make site responsive -->
@@ -8,6 +9,7 @@
     <!--Including font awesome icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Bootstrap CDN link and scripts-->
+    <link rel="stylesheet" type="text/css" href="css/addevent.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -24,15 +26,7 @@
             image.drawTo(imgcanvas);
         }
     </script>
-    <style>
-        .body {
-            max-width: 100vw;
-        }
-        
-        .footer {
-            max-width: 100vw;
-        }
-    </style>
+
 
 </head>
 
@@ -54,12 +48,14 @@
                             <a class="nav-link" href="add_event.html">Add event</a>
                         </li>
                     </ul>
-                    <ul class="navbar-nav">
+                    <ul id="loginlist" class="navbar-nav">
                         <li class="nav-item">
-                            <form class="form-inline my-2 my-lg-0 justify-content-between ">
-                                <input class="form-control mr-sm-2 " type="username" aria-label="Search " id="username" placeholder=" Username " style="width:250px; font-size: medium; ">
-                                <input class="form-control mr-sm-2 " type="password" aria-label="Search " id="password" placeholder="Password " style="width:250px; font-size: medium; ">
-                                <button class="btn btn-outline my-2 my-sm-0 " type="submit " id="login" style="background-color:#1D2951 ; color:white"><strong>Login </strong><i class="fa fa-sign-in" aria-hidden="true"></i> </button>
+                            <form class="form-inline justify-content-between logform">
+                                <button class="btn btn-outline my-2 my-sm-0" type="submit " id="logout" formaction="About1.html">
+                                    <strong>Logout</strong>
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i>
+                                </button>
+                                <i id="user" class="fa fa-user-circle fa-2x" aria-hidden="true"></i>
                             </form>
                         </li>
                     </ul>
@@ -70,12 +66,14 @@
 
     </header>
     <div class="container" style="padding-top:69px;">
-        <header>
-            <h1>
-                Add Event
-            </h1>
-        </header>
-        <form style="padding-bottom: 50px;">
+
+        <form class="form1 formcontainer" style="padding-bottom: 50px;">
+            <header class="ADD_EVENT" style="margin-bottom:10px;">
+                <h1>
+                    Add Event
+                </h1>
+            </header>
+            <br>
             <label>Start Date and time</label>
             <input class="form-control" type="datetime-local" id="start_date" />
             <label>End Date and time</label>
@@ -90,14 +88,18 @@
             <label>Information of the event</label>
             <input class="form-control" type="text-wrap" placeholder="" id="info" />
             <label>Host</label>
-            <input class="form-control" type="text" placeholder="" id="host_name" />
+            <input class="form-control" type="text" placeholder="" id="host_name" /> <br>
             <!--Form to be made for multiple contact-->
-            <label>Contact Person</label>
-            <input type="button" placeholder="preview " value="+">
-            <input class="form-control " type="text " paceholder=" " id="contact person " />
-            <label>Phone number</label>
-            <input class="form-control " type="number " id="phone_no " />
-            <br>
+            <label>Contact Person : </label>
+            <div style="padding-left: 20px;">
+
+                <label>Name</label>
+                <input class="form-control " type="text " paceholder=" " id="contact person " />
+                <br>
+                <label>Phone number</label>
+                <input class="form-control " type="number " id="phone_no " />
+                <br>
+            </div>
             <label>Registration link</label>
             <input class="form-control " type="url " paceholder=" " id="registration_link " />
             <p>
@@ -106,15 +108,18 @@
                 <label>Filename :</label>
                 <input type="file" id="finput" multiple="false" accept="image/*" onchange="upload()" />
             </p>
-            <input type="button" placeholder="submit " value="submit " />
-            <input type="button" placeholder="preview " value="preview " />
+            <div style="float:right;position: relative;">
+
+                <input type="button" class="btn-warning" placeholder="preview" value="Preview" style="text-align: center; width: fit-content; margin-right: 10px;" />
+                <input type="button" class="btn-success" placeholder="submit" value="Submit" style="text-align: center; width: fit-content; margin-bottom: 50px;" />
+            </div>
         </form>
     </div>
 
 </body>
-<footer class=" page-footer font-small footer-fixed ">
+<footer class="page-footer font-small footer-fixed ">
 
-    <div class=" flex-center text-center py-5 " style="background-color:#1D2951; color:white; ">
+    <div class=" flex-center text-center py-5 " style="background-color:#1D2951; ;color:white; ">
         <i class="fa fa-facebook-f fa-lg white mr-md-3 mr-3 fa-2x "> </i>
 
         <i class="fa fa-twitter fa-lg white mr-md-3 mr-3 fa-2x "> </i>
