@@ -23,7 +23,7 @@
     <header>
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#FF8C00">
-                <h2><a class="navbar-brand" href="#">St. Francis Institute of Technology</a></h2>
+                <h2><a class="navbar-brand" href="https://www.sfit.ac.in/">St. Francis Institute of Technology</a></h2>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
@@ -66,9 +66,9 @@
     </div>
     <div class="container-fluid ">
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
-            <img class="commitee_image img-responsive " src=" images/codex_image.jfif " alt="img-responsive " />
-            <div class=" content " style="padding-left: 20px;width:66vw; ">
-                <a href="# " style=color:black;>
+            <img class="commitee_image img-responsive " src=" images/codex_image.jfif " alt="img-responsive "style="height:auto;" />
+            <div class="content" style="padding-left: 20px;width:60vw; ">
+                <a href="http://codex.sfit.ac.in/" style=color:black;>
                     <h1 class="commitee_head ">Codex</h1>
                 </a>
                 <p><b>Founder’s Talk:</b> While I have always been excited about all innovations in technology as a young computer engineer, some things bothered me. My primary concern is the ever increasing gap between industry standards and curriculum.
@@ -78,8 +78,8 @@
             </div>
         </div>
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
-            <div class=" content " style="padding-left: 20px; padding-right: 20X; width:66vw; ">
-                <a href="# " style=color:black;>
+            <div class=" content " style="padding-left: 20px; padding-right: 20X; width:60vw; ">
+                <a href="https://itsa.sfit.ac.in/" style=color:black;>
                     <h1 class="commitee_head ">ITSA</h1>
                 </a>
                 <p>
@@ -92,8 +92,8 @@
         </div>
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
             <img class="commitee_image img-responsive " src="images/CSI_IMAGE.jfif " alt="img-responsive " />
-            <div class=" content " style="padding-left: 20px;width:66vw; ">
-                <a href="# " style=color:black;>
+            <div class=" content " style="padding-left: 20px;width:60vw; ">
+                <a href="https://www.csi.sfit.ac.in/" style=color:black;>
                     <h1 class="commitee_head ">CSI</h1>
                 </a>
                 <p>
@@ -104,7 +104,7 @@
             </div>
         </div>
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
-            <div class=" content " style="padding-left: 20px;width:66vw; ">
+            <div class=" content " style="padding-left: 20px;width:60vw; ">
                 <a href="# " style=color:black;>
                     <h1 class="commitee_head ">ISTE</h1>
                 </a>
@@ -117,7 +117,7 @@
         </div>
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
             <img class="commitee_image img-responsive " src="images/mesa.jpeg " alt="img-responsive " />
-            <div class=" content " style="padding-left: 20px;width:66vw; ">
+            <div class=" content " style="padding-left: 20px;width:60vw; ">
                 <a href="# " style=color:black;>
                     <h1 class="commitee_head ">MESA</h1>
                 </a>
@@ -128,8 +128,8 @@
             </div>
         </div>
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
-            <div class=" content " style="padding-left: 20px;width:66vw; ">
-                <a href="# " style=color:black;>
+            <div class=" content " style="padding-left: 20px;width:60vw; ">
+                <a href="http://issb.sfit.ac.in/" style=color:black;>
                     <h1 class="commitee_head ">ISSB</h1>
                 </a>
                 <p>
@@ -143,7 +143,7 @@
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
 
             <img class="commitee_image " src="images/eesa.jpeg " alt="img-responsive " />
-            <div class=" content " style="padding-left: 20px;width:66vw; ">
+            <div class=" content " style="padding-left: 20px;width:60vw; ">
                 <a href="# " style=color:black;>
                     <h1 class="commitee_head ">EESA</h1>
                 </a>
@@ -158,7 +158,7 @@
             </div>
         </div>
         <div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
-            <div class=" content " style="padding-left: 20px;width:66vw; ">
+            <div class=" content " style="padding-left: 20px;width:60vw; ">
                 <a href="# " style=color:black;>
                     <h1 class="commitee_head ">NSS</h1>
                 </a>
@@ -240,13 +240,14 @@
 <footer class="page-footer font-small footer-fixed ">
 
     <div class=" flex-center text-center py-5 " style="background-color:#1D2951; ;color:white; ">
-        <i class="fa fa-facebook-f fa-lg white mr-md-3 mr-3 fa-2x "> </i>
+        <a href="https://www.facebook.com/st.fit"><i class="fa fa-facebook-f fa-lg white mr-md-3 mr-3 fa-2x "> </i></a>
+        <a href="https://mobile.twitter.com/sfitborivali"><i class="fa fa-twitter fa-lg white mr-md-3 mr-3 fa-2x "> </i></a>
 
-        <i class="fa fa-twitter fa-lg white mr-md-3 mr-3 fa-2x "> </i>
+        <a href="https://www.linkedin.com/school/sfit/"><i class="fa fa-linkedin fa-lg white mr-md-3 mr-3 fa-2x "> </i></a>
 
-        <i class="fa fa-instagram fa-lg white mr-md-3 mr-3 fa-2x "> </i>
+        <a href="https://www.instagram.com/sfit_engg_official/?igshid=1vjrvw901u897"><i class="fa fa-instagram fa-lg white mr-md-3 mr-3 fa-2x "> </i></a>
 
-        <i class="fa fa-pinterest fa-lg white fa-2x "> </i>
+        <a href="https://www.youtube.com/channel/UCUT6MM1-O5vGnX3V6fpCTEQ"><i class="fa fa-youtube-play fa-lg white fa-2x "> </i></a>
     </div>
 
     <div class="footer-copyright flex-center text-center py-1 " style="background-color:#22305f; ;color:white; ">© 2020 Copyright
