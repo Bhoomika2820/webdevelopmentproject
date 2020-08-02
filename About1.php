@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -230,7 +228,7 @@
                 <label for="psw"><b>Password</b></label>
                 <input id="password" type="password" placeholder="Enter Password" name="psw" required>
 
-                <button id="login" name="login"class="button" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                <button id="login" name="login" class="button" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
 
             </div>
         </form>
