@@ -34,7 +34,7 @@
     <header>
         <div>
             <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:#FF8C00">
-                <h2><a class="navbar-brand" href="#">St. Francis Institute of Technology</a></h2>
+                <h2><a class="navbar-brand" href="https://www.sfit.ac.in/">St. Francis Institute of Technology</a></h2>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                             </button>
@@ -120,13 +120,14 @@
 <footer class="page-footer font-small footer-fixed ">
 
     <div class=" flex-center text-center py-5 " style="background-color:#1D2951; ;color:white; ">
-        <i class="fa fa-facebook-f fa-lg white mr-md-3 mr-3 fa-2x "> </i>
+        <a href="https://www.facebook.com/st.fit"><i class="fa fa-facebook-f fa-lg white mr-md-3 mr-3 fa-2x "> </i></a>
+        <a href="https://mobile.twitter.com/sfitborivali"><i class="fa fa-twitter fa-lg white mr-md-3 mr-3 fa-2x "> </i></a>
 
-        <i class="fa fa-twitter fa-lg white mr-md-3 mr-3 fa-2x "> </i>
+        <a href="https://www.linkedin.com/school/sfit/"><i class="fa fa-linkedin fa-lg white mr-md-3 mr-3 fa-2x "> </i></a>
 
-        <i class="fa fa-instagram fa-lg white mr-md-3 mr-3 fa-2x "> </i>
+        <a href="https://www.instagram.com/sfit_engg_official/?igshid=1vjrvw901u897"><i class="fa fa-instagram fa-lg white mr-md-3 mr-3 fa-2x "> </i></a>
 
-        <i class="fa fa-pinterest fa-lg white fa-2x "> </i>
+        <a href="https://www.youtube.com/channel/UCUT6MM1-O5vGnX3V6fpCTEQ"><i class="fa fa-youtube-play fa-lg white fa-2x "> </i></a>
     </div>
 
     <div class="footer-copyright flex-center text-center py-1 " style="background-color:#22305f; ;color:white; ">© 2020 Copyright
