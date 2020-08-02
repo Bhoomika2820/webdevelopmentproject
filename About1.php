@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -215,7 +217,7 @@
     </div>
     <div id="id01" class="modal1">
 
-        <form class="modal-content1 animate" action="php/login_page.php" method="post">
+        <form class="modal-content1 animate" action="login_page.php" method="post">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('id01').style.display='none'; document.querySelector('body').style.overflow = 'auto'" class="close">&times;</span>
                 <img src="images/profile_pic.svg" alt="Avatar" class="avatar">
@@ -223,12 +225,12 @@
 
             <div class="container">
                 <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
+                <input id="username" type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
+                <input id="password" type="password" placeholder="Enter Password" name="psw" required>
 
-                <button id="login" class="button" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                <button id="login" name="login"class="button" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
 
             </div>
         </form>
