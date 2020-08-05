@@ -1,4 +1,4 @@
-Change 1 -->
+<!-- Change 1 -->
 <?php
 	$conn = mysqli_connect("localhost", "root", "", "site");
 	$res = $conn->query("SELECT * FROM candidate_visible");
