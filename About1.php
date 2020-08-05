@@ -22,6 +22,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="ajax.js"></script>
 	<style>
 		.carousel-inner img {
 			width: 100%;
@@ -41,7 +42,7 @@
 				<div class="collapse navbar-collapse navbar-nav-scroll" id="navbarSupportedContent">
 					<ul class=" navbar-nav bd-navbar-nav flex-row  mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="About1.html">Home<span class="sr-only"></span></a>
+							<a class="nav-link" href="About1.php">Home<span class="sr-only"></span></a>
 						</li>
 						<li class="nav-item" style="cursor: pointer;">
 							<a class="nav-link" onclick="document.querySelector('.modal1').style.display = 'flex'; document.querySelector('body').style.overflow = 'hidden'" style="width:auto;">Add event</a>
@@ -51,24 +52,24 @@
 			</nav>
 		</div>
 	</header>
-	<div class="container-fluid " style="padding-top: 65px; box-shadow: 10px 10px 8px 2px #FF8C00; "> <!-- Change 3 -->
+	<div class="container-fluid " style="padding-top: 65px; box-shadow: 0px 10px 8px 2px #FF8C00;"> <!-- Change 3 -->
 		<div class="row ">
-			<div class="carousel slide carousel-fade " style="position: relative; margin: auto; margin-top: 50px;"> <!-- Change 4 -->
-				<div class="image_wrapper" style="height: 600px;"> <!-- Change 5 -->
+			<div class="carousel slide carousel-fade" style="position: relative; margin: auto; margin-top: 7px;"> <!-- Change 4 -->
+				<div class="image_wrapper" style="width: 99vw;"> <!-- Change 5 -->
 					<!-- Change 6 -->
-					<div id="demo" class="carousel slide" data-ride="carousel" style="width: 500px;">
+					<div id="demo" class="carousel slide" data-ride="carousel" style="margin: auto; width: 99vw;">
 						<!-- Indicators -->
 						<ul class="carousel-indicators">
-							<?php
-								$i = 0;
-								foreach ($res as $row) {
-									$actives = " ";
-									if($i == 0) {
-										$actives = 'active';
-									}
-							?>
+						<?php
+							$i = 0;
+							foreach ($res as $row) {
+								$actives = " ";
+								if($i == 0) {
+									$actives = 'active';
+								}
+						?>
 							<li data-target="#demo" data-slide-to="<?= $i; ?>" class="<?= $actives; ?>"></li>
-							<?php $i++; } ?>
+							<?php $i++; }?>
 						</ul>
 						<!-- The slideshow -->
 						<div class="carousel-inner">
@@ -82,10 +83,20 @@
 							?>
 							<div class="carousel-item <?= $actives; ?>">
 								<?php
-									echo "<img src='data:image;base64, ".Base64_encode($row["image"])." '>";
+									echo "<img id=".$row['title']." src='data:image;base64, ".Base64_encode($row["image"])."' style='height: 900px;'>";
 								?>
 							</div>
-							<?php $i++; }?>
+							<?php 
+								$i++; } 
+							?>
+							<form method="post">
+								<div class="bg-modal">
+									<div class="modal-contents animate">
+										<span onclick="document.querySelector('.bg-modal').style.display='none';" class="close">&times;</span>
+										<div id="displaydata"></div>
+									</div>
+								</div>
+							</form>
 						</div>
 						<!-- Left and right controls -->
 						<a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -95,10 +106,11 @@
 							<span class="carousel-control-next-icon"></span>
 						</a>
 					</div>
-					<div class="carousel-caption justify-content-center" style="padding: 0;">
+					<div class="carousel-caption" style="padding: 0; left: 0%; right: 0%; margin-bottom: 40px;">
 						<div class="col-10 align-center align-top" style="margin: auto; padding: 0px;">
-							<div class="mbr-section-btn " buttons=" 0 ">
-								<a class="btn display-4 btn-dark " href="#" id="info" onclick="document.querySelector('.bg-modal').style.display = 'flex';" style=" margin: 10px; ">Info </a>
+							<div class="mbr-section-btn" buttons="0">
+								<!-- <a class="btn display-4 btn-dark " href="#" name="info" id="info" style=" margin: 10px; ">Info</a> -->
+								<button id="info" type="button" class="btn btn-dark display-4" style=" margin: 10px; ">Info</button>
 								<a class="btn display-4 btn-dark " id="register " href=" # " style="margin: 10px; ">  Register </a>
 							</div>
 						</div>
@@ -109,7 +121,7 @@
 		</div>
 	</div>
 	<div class="container-fluid ">
-		<div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<img class="committee_image img-responsive " src=" images/codex_image.jfif " alt="img-responsive " />
 			<div class=" content " style="padding-left: 20px;width:66vw; ">
 				<a href="# " style=color:black;>
@@ -121,7 +133,7 @@
 					towards the realization of India's Dream in Technological Advancement.</p>
 			</div>
 		</div>
-		<div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<div class=" content " style="padding-left: 20px; padding-right: 20px; width:66vw; ">
 				<a href="# " style=color:black;>
 					<h1 class="committee_head ">ITSA</h1>
@@ -134,7 +146,7 @@
 			<img class="committee_image img-responsive " src="images/itsa_image.png " alt="img-responsive " />
 
 		</div>
-		<div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<img class="committee_image img-responsive " src="images/CSI_IMAGE.jfif " alt="img-responsive " />
 			<div class=" content " style="padding-left: 20px;width:66vw; ">
 				<a href="# " style=color:black;>
@@ -147,7 +159,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<div class=" content " style="padding-left: 20px;width:66vw; ">
 				<a href="# " style=color:black;>
 					<h1 class="committee_head ">ISTE</h1>
@@ -158,7 +170,7 @@
 			</div>
 			<img class="committee_image img-responsive " class="committee_image " src="images/iste.jpeg " alt="img-responsive " />
 		</div>
-		<div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<img class="committee_image img-responsive " src="images/mesa.jpeg " alt="img-responsive " />
 			<div class=" content " style="padding-left: 20px;width:66vw; ">
 				<a href="# " style=color:black;>
@@ -170,7 +182,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<div class=" content " style="padding-left: 20px;width:66vw; ">
 				<a href="# " style=color:black;>
 					<h1 class="committee_head ">ISSB</h1>
@@ -182,7 +194,7 @@
 			</div>
 			<img class="committee_image " src="images/issb_image.png " alt="img-responsive " />
 		</div>
-		<div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<img class="committee_image " src="images/eesa.jpeg " alt="img-responsive " />
 			<div class=" content " style="padding-left: 20px;width:66vw; ">
 				<a href="# " style=color:black;>
@@ -198,7 +210,7 @@
 				</p>
 			</div>
 		</div>
-		<div class="row " style="padding:40px;box-shadow: 10px 10px 8px 2px #FF8C00; ">
+		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<div class=" content " style="padding-left: 20px;width:66vw; ">
 				<a href="# " style=color:black;>
 					<h1 class="committee_head ">NSS</h1>
@@ -213,85 +225,35 @@
 				</p>
 			</div>
 			<img class="committee_image " src="images/nss.jpeg " alt="img-responsive " />
-
 		</div>
-
-	</div>
-	<div class="bg-modal">
-		<div class="modal-contents animate ">
-			<span onclick="document.querySelector( '.bg-modal').style.display='none' " class="close">&times;</span>
-
-
-			<label id="event_name " style="text-align:center; "><strong>Event Name</Strong></label>
-
-			<div id="date ">
-				<label>Start Date :</label>
-				<label id="start_date "></label>
-				<br>
-				<label>End Date : </label>
-				<label id="end_date "></label>
-			</div>
-			<div>
-				<label>Event Category : </label>
-				<label id="event_category "></label>
-			</div>
-
-			<div>
-				<label>Information</label>
-				<label id="information "></label>
-			</div>
-			<div>
-				<label>Speaker</label>
-				<label id="speaker "></label>
-			</div>
-			<div>
-				<label>Contact Person</label>
-				<br>
-				<label>Name : </label>
-				<label id="contact_name "></label>
-				<br>
-				<label>Phone No:</label>
-				<label id="phone_no "></label>
-			</div>
-		</div>
-
 	</div>
 	<div id="id01" class="modal1">
-
-		<form class="modal-content1 animate" action="php/login_page.php" method="post">
+		<form class="modal-content1 animate" action="login_page.php" method="post">
 			<div class="imgcontainer">
 				<span onclick="document.getElementById('id01').style.display='none'; document.querySelector('body').style.overflow = 'auto'" class="close">&times;</span>
 				<img src="images/profile_pic.svg" alt="Avatar" class="avatar">
 			</div>
-
 			<div class="container">
 				<label for="uname"><b>Username</b></label>
 				<input id="username" type="text" placeholder="Enter Username" name="uname" required>
-
 				<label for="psw"><b>Password</b></label>
 				<input id="password" type="password" placeholder="Enter Password" name="psw" required>
-
 				<button id="login" name="login" class="button" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
-
 			</div>
 		</form>
 	</div>
 </body>
-
 <footer class="page-footer font-small footer-fixed ">
-
 	<div class=" flex-center text-center py-5 " style="background-color:#1D2951; ;color:white; ">
 		<i class="fa fa-facebook-f fa-lg white mr-md-3 mr-3 fa-2x "> </i>
-
 		<i class="fa fa-twitter fa-lg white mr-md-3 mr-3 fa-2x "> </i>
-
 		<i class="fa fa-instagram fa-lg white mr-md-3 mr-3 fa-2x "> </i>
-
 		<i class="fa fa-pinterest fa-lg white fa-2x "> </i>
 	</div>
-
 	<div class="footer-copyright flex-center text-center py-1 " style="background-color:#22305f; ;color:white; ">© 2020 Copyright
 	</div>
 </footer>
-
+<?php
+	include(ajax.js);
+?>
 </html>
