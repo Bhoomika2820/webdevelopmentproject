@@ -127,8 +127,8 @@
             <!--Submit and preview button-->
             <div style="float:right;position: relative;">
 
-                <input type="button" class="btn-warning"value="Preview" id="preview" name="preview" style="text-align: center; width: fit-content; margin-right: 10px;" />
-                <input type="button" class="btn-success"value="Submit" id="submit" name="submit" style="text-align: center; width: fit-content; margin-bottom: 50px;" />
+                <button class="btn-warning"id="preview" name="preview" style="text-align: center; width: fit-content; margin-right: 10px;">Preview</button>
+                <button class="btn-success"id="submit" name="submit" style="text-align: center; width: fit-content; margin-bottom: 50px;">Submit</button>
             </div>
         </form>
     </div>

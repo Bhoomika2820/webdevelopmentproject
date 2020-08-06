@@ -4,6 +4,7 @@ $user="root";
 $password="";
 $db="commitee_advertisement";
 $conn=mysqli_connect($host,$user,$password,$db);
+echo"sdfghjkl";
 $committee='Codex';
 $start_time=$_POST["start_date"];
 $end_time=$_POST["end_date"];
@@ -23,7 +24,7 @@ $imgContent = addslashes(file_get_contents($image));
 
 
 
-echo"sdfghjkl";
+
 if(isset($_POST['submit']))
 {
 
