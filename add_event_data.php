@@ -24,7 +24,7 @@ $imgContent = addslashes(file_get_contents($image));
 
 
 echo"sdfghjkl";
-if(isset()
+if(isset($_POST['submit']))
 {
 
 
