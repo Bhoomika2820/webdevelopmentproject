@@ -1,9 +1,7 @@
-<!-- Change 1 -->
 <?php
 	$conn = mysqli_connect("localhost", "root", "", "site");
 	$res = $conn->query("SELECT * FROM candidate_visible");
 ?>
-<!-- end 1 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +17,6 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<!-- Change 2 -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="ajax.js"></script>
@@ -29,7 +26,6 @@
 			height: 100%;
 		}
 	</style>
-	<!-- end 2 -->
 </head>
 <body>
 	<header>
@@ -52,14 +48,12 @@
 			</nav>
 		</div>
 	</header>
-	<div class="container-fluid " style="padding-top: 65px; box-shadow: 0px 10px 8px 2px #FF8C00;"> <!-- Change 3 -->
+	<div class="container-fluid " style="padding-top: 65px; box-shadow: 0px 10px 8px 2px #FF8C00;">
 		<div class="row ">
-			<div class="carousel slide carousel-fade" style="position: relative; margin: auto; margin-top: 7px;"> <!-- Change 4 -->
-				<div class="image_wrapper" style="width: 99vw;"> <!-- Change 5 -->
-					<!-- Change 6 -->
-					<form action="info.php" method="GET">
+			<div class="carousel slide carousel-fade" style="position: relative; margin: auto; margin-top: 7px;">
+				<div class="image_wrapper" style="width: 99vw;">
+					<form action="ajax.php" method="post">
 						<div id="demo" class="carousel slide" data-ride="carousel" style="margin: auto; width: 99vw;">
-							<!-- Indicators -->
 							<ul class="carousel-indicators">
 							<?php
 								$i = 0;
@@ -72,7 +66,6 @@
 								<li data-target="#demo" data-slide-to="<?= $i; ?>" class="<?= $actives; ?>"></li>
 								<?php $i++; }?>
 							</ul>
-							<!-- The slideshow -->
 							<div class="carousel-inner">
 								<?php
 									$i = 0;
@@ -82,35 +75,33 @@
 											$actives = 'active';
 										}
 								?>
-								<!-- <form action="info.php" method="GET"> -->
 								<div class="carousel-item <?= $actives; ?>">
 									<?php
-										echo "<img id='event_img' alt=".$row['title']." src='data:image;base64, ".Base64_encode($row["image"])."' style='height: 900px;'>";
+										echo "<img id=".$row['title']." src='data:image;base64, ".Base64_encode($row["image"])."' style='height: 900px;'>";
 									?>
 									<div class="carousel-caption" style="padding: 0; left: 0%; right: 0%; margin-bottom: 40px;">
 										<div class="col-10 align-center align-top" style="margin: auto; padding: 0px;">
 											<div class="mbr-section-btn" buttons="0">
-												<a class="info btn display-4 btn-dark " href="#" name="<?= $i; ?>" id="<?= $i; ?>" style=" margin: 10px; ">Info</a>
-												<!-- <button id="info" type="button" class="btn btn-dark display-4" style=" margin: 10px; ">Info</button> -->
-												<a class="btn display-4 btn-dark " id="register " href=" # " style="margin: 10px; ">  Register </a>
+												<a class="info btn display-4 btn-dark " name="info" id="<?= $row['title']; ?>" style=" margin: 10px; ">Info</a>	
+												<a class="btn display-4 btn-dark " id="register " href="<?= $row['reg_link']?>" style="margin: 10px; ">Register</a>
 											</div>
 										</div>
 									</div>
 								</div>
-								<!-- </form> -->
-								<?php 
-									$i++; } 
+								<?php
+									$i++; }
 								?>
 								<form method="post">
 									<div class="bg-modal">
-										<div class="modal-contents animate">
+										<div class="modal-contents animate" style="margin: auto;">
 											<span onclick="document.querySelector('.bg-modal').style.display='none';" class="close">&times;</span>
-											<div id="displaydata"></div>
+											<div id="displaydata">
+												
+											</div>
 										</div>
 									</div>
 								</form>
 							</div>
-							<!-- Left and right controls -->
 							<a id="prev" class="carousel-control-prev" href="#demo" data-slide="prev">
 								<span class="carousel-control-prev-icon"></span>
 							</a>
@@ -118,18 +109,7 @@
 								<span class="carousel-control-next-icon"></span>
 							</a>
 						</div>
-						
-						<!-- <div class="carousel-caption" style="padding: 0; left: 0%; right: 0%; margin-bottom: 40px;">
-							<div class="col-10 align-center align-top" style="margin: auto; padding: 0px;">
-								<div class="mbr-section-btn" buttons="0">
-									<a class="btn display-4 btn-dark " href="#" name="info" id="info" style=" margin: 10px; ">Info</a>
-									<button id="info" type="button" class="btn btn-dark display-4" style=" margin: 10px; ">Info</button>
-									<a class="btn display-4 btn-dark " id="register " href=" # " style="margin: 10px; ">  Register </a>
-								</div>
-							</div>
-						</div> -->
 					</form>
-					<!-- end 6 -->
 				</div>
 			</div>
 		</div>

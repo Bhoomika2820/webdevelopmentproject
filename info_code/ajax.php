@@ -9,12 +9,11 @@
 	$('.info').click(function (e) {
 		document.querySelector('.bg-modal').style.display = 'block';
 		e.preventDefault();
-		var infoid = $(this).data('id');
-		alert(infoid);
+		var infoid = $(this).attr('id');
 		$.ajax({
-			method: "get",
-			url: "info.php",
+			method: "post",
 			data: {infoid: infoid},
+			url: "info.php",
 			dataType: "html",
 			success: function (response) {
 				$('#displaydata').html(response);

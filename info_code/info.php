@@ -1,15 +1,9 @@
 <?php
-	include 'ajax.php';
-	$infoid = $_GET['infoid'];
-	echo $infoid;
+	include "ajax.php";
 	$conn = mysqli_connect("localhost", "root", "", "site");
-	$res1 = mysqli_query($conn, "SELECT title FROM candidate_visible");
-	$title = array();
-	while ($row = mysqli_fetch_array($res1)) {
-		array_push($title, $row['title']);
-	}
-	$i = 2;
-	$res = mysqli_query($conn, "SELECT * FROM candidate_visible WHERE title='".$title[$i]."'");
+	if (isset($_POST['infoid'])) {
+	$val = $_POST['infoid'];
+	$res = mysqli_query($conn, "SELECT * FROM candidate_visible WHERE title='".$val."'");
 	if ($res) {
 		while ($row = mysqli_fetch_array($res)) {
 			echo '<label id="event_name " style="text-align:center; "><strong>Event Name</strong></label>
@@ -46,4 +40,8 @@
 	else {
 		echo "No info";
 	}
+}
+else {
+	die("Oh snap! Server issues!!");
+}
 ?>
