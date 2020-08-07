@@ -11,20 +11,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Bootstrap CDN link and scripts-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script>
 $(document).ready(function(){
     $("#login").click(function(){
+        alert "jam";
         var username = $("#uname").val().trim();
         var password = $("#psw").val().trim();
 
         if( username != "" && password != "" )
         {
-            jQuery.ajax({
+            $.ajax({
                 url:'checkUser.php',
                 type:'post',
                 data:{username:username,password:password},
@@ -44,7 +46,6 @@ $(document).ready(function(){
         }
     });
 });
-
 </script>
 </head>
 
@@ -253,14 +254,15 @@ $(document).ready(function(){
             </div>
 
             <div class="container">
+                <div id="message"></div>
                 <label for="uname"><b>Username</b></label>
                 <input id="uname" type="text" placeholder="Enter Username" name="uname" required>
 
                 <label for="psw"><b>Password</b></label>
                 <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
 
-                <button id="login" name="login"class="button" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
-                <div id="message"></div>
+                <button id="login" name="login"class="button" onclick="" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                
 
             </div>
         </form>

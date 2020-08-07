@@ -17,6 +17,7 @@
     <script type="text/javascript"src="js/images_upload.js"></script>
 
     <script>
+    //uploding image on the canvas
         function upload() {
             var fileinput = document.getElementById("finput");
             var imgcanvas = document.getElementById("c1");
@@ -116,10 +117,10 @@
 
             <!--Registration link -->
             <label>Registration link</label>
-            <input class="form-control" type="url " paceholder=" " id="registration_link " name="registration_link" required/>
+            <input class="form-control" type="url" paceholder=" " id="registration_link " name="registration_link" required/>
             <p>
                 <label>Add Poster</label>
-                <canvas class="form-control imageuploader" id="c1" name="c1"style="width:fit-content;height:fit-content;border: light black; margin-bottom:10px;"></canvas>
+                <canvas class="form-control imageuploader" id="c1" name="c1"style="width:100%;height:100%;border: light black; margin-bottom:10px;"></canvas>
                 <label>Filename :</label>
                 <input type="file" id="finput"name="image" multiple="false" accept="image/*" onchange="upload()" required/>
             </p>
