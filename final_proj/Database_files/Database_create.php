@@ -6,7 +6,7 @@
 	if (!$conn) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
-	$sql = "CREATE DATABASE commitee_advertisement";
+	$sql = "CREATE DATABASE committee_advertisement";
 	if (mysqli_query($conn, $sql)) {
 		echo "Database created";
 	}
