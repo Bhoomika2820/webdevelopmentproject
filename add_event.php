@@ -9,13 +9,12 @@
     <!--Including font awesome icons-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!--Bootstrap CDN link and scripts-->
-    <link rel="stylesheet" type="text/css" href="css/addevent.css">
+    <link rel="stylesheet" type="text/css" href="css/event.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
-
     <script>
         function upload() {
             var fileinput = document.getElementById("finput");
@@ -26,7 +25,6 @@
             image.drawTo(imgcanvas);
         }
     </script>
-
 
 </head>
 
@@ -110,12 +108,45 @@
             </p>
             <div style="float:right;position: relative;">
 
-                <input type="button" class="btn-warning" placeholder="preview" value="Preview" style="text-align: center; width: fit-content; margin-right: 10px;" />
+                <input type="button" class="preview btn-warning" placeholder="preview" value="Preview" style="text-align: center; width: fit-content; margin-right: 10px;" />
                 <input type="button" class="btn-success" placeholder="submit" value="Submit" style="text-align: center; width: fit-content; margin-bottom: 50px;" />
             </div>
         </form>
     </div>
-
+    <div class="event-modal">
+        <div class="event-modal-contents animate" >
+            <span onclick="document.querySelector('.event-modal').style.display='none';" class="close">&times;</span>
+            <label id="name" style="text-align:center; "><strong></strong></label>
+            <div id="date ">
+                <label>Start Date: </label>
+                <label id="sdate"></label>
+                <br>
+                <label>End Date: </label>
+                <label id="edate "></label>
+            </div>
+            <div>
+                <label>Event Category: </label>
+                <label id="event_category"></label>
+            </div>
+            <div>
+                <label>Information</label>
+                <label id="information"></label>
+            </div>
+            <div>
+                <label>Speaker</label>
+                <label id="speaker"></label>
+            </div>
+            <div>
+                <label>Contact Person</label>
+                <br>
+                <label>Name : </label>
+                <label id="contact_name"></label>
+                <br>
+                <label>Phone No:</label>
+                <label id="phone_no"></label>
+            </div>
+        </div>
+    </div>
 </body>
 <footer class="page-footer font-small footer-fixed ">
 
@@ -133,5 +164,27 @@
     <div class="footer-copyright flex-center text-center py-1 " style="background-color:#22305f; ;color:white; ">© 2020 Copyright
     </div>
 </footer>
-
+<script>
+        $(document).ready(function () {
+            $('.preview').click(function (e) {
+                document.querySelector('.event-modal').style.display = 'block';
+                e.preventDefault();
+                var start_date = document.getElementById('start_date').value;
+                document.getElementById('sdate').innerHTML = start_date;
+                var end_date = document.getElementById('end_date').value;
+                document.getElementById('edate').innerHTML = end_date;
+                var category = document.getElementById('category').value;
+                document.getElementById('event_category').innerHTML = start_date;
+                var name = document.getElementById('event_name').value;
+                document.getElementById('name').innerHTML = name;
+                var start_date = document.getElementById('start_date').value;
+                document.getElementById('date').innerHTML = start_date;
+                var start_date = document.getElementById('start_date').value;
+                document.getElementById('date').innerHTML = start_date;
+                var start_date = document.getElementById('start_date').value;
+                document.getElementById('date').innerHTML = start_date;
+                
+            })
+        });
+    </script>
 </html>

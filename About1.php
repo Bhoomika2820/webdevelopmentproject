@@ -1,9 +1,7 @@
-<!-- Change 1 -->
 <?php
 	$conn = mysqli_connect("localhost", "root", "", "site");
 	$res = $conn->query("SELECT * FROM candidate_visible");
 ?>
-<!-- end 1 -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,23 +11,24 @@
 	<link rel="stylesheet" type="text/css" href="css/home.css">
 	<!--Including font awesome icons-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- JQuery -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<!--Bootstrap CDN link and scripts-->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<!-- Change 2 -->
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="ajax.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="info.php"></script>
 	<style>
 		.carousel-inner img {
 			width: 100%;
 			height: 100%;
 		}
 	</style>
-	<!-- end 2 -->
 </head>
 <body>
 	<header>
@@ -52,27 +51,13 @@
 			</nav>
 		</div>
 	</header>
-	<div class="container-fluid " style="padding-top: 65px; box-shadow: 0px 10px 8px 2px #FF8C00;"> <!-- Change 3 -->
+	<div class="container-fluid " style="padding-top: 65px; box-shadow: 0px 10px 8px 2px #FF8C00;">
 		<div class="row ">
-			<div class="carousel slide carousel-fade" style="position: relative; margin: auto; margin-top: 7px;"> <!-- Change 4 -->
-				<div class="image_wrapper" style="width: 99vw;"> <!-- Change 5 -->
-					<!-- Change 6 -->
-					<div id="demo" class="carousel slide" data-ride="carousel" style="margin: auto; width: 99vw;">
-						<!-- Indicators -->
-						<ul class="carousel-indicators">
-						<?php
-							$i = 0;
-							foreach ($res as $row) {
-								$actives = " ";
-								if($i == 0) {
-									$actives = 'active';
-								}
-						?>
-							<li data-target="#demo" data-slide-to="<?= $i; ?>" class="<?= $actives; ?>"></li>
-							<?php $i++; }?>
-						</ul>
-						<!-- The slideshow -->
-						<div class="carousel-inner">
+			<div class="carousel slide carousel-fade" style="position: relative; margin: auto; margin-top: 7px;">
+				<div class="image_wrapper" style="width: 99vw;">
+					<form action="info.php" method="post">
+						<div id="demo" class="carousel slide" data-ride="carousel" style="margin: auto; width: 99vw;">
+							<ul class="carousel-indicators">
 							<?php
 								$i = 0;
 								foreach ($res as $row) {
@@ -81,41 +66,53 @@
 										$actives = 'active';
 									}
 							?>
-							<div class="carousel-item <?= $actives; ?>">
+								<li data-target="#demo" data-slide-to="<?= $i; ?>" class="<?= $actives; ?>"></li>
+								<?php $i++; }?>
+							</ul>
+							<div class="carousel-inner">
 								<?php
-									echo "<img id=".$row['title']." src='data:image;base64, ".Base64_encode($row["image"])."' style='height: 900px;'>";
+									$i = 0;
+									foreach ($res as $row) {
+										$actives = " ";
+										if($i == 0) {
+											$actives = 'active';
+										}
 								?>
-							</div>
-							<?php 
-								$i++; } 
-							?>
-							<form method="post">
-								<div class="bg-modal">
-									<div class="modal-contents animate">
-										<span onclick="document.querySelector('.bg-modal').style.display='none';" class="close">&times;</span>
-										<div id="displaydata"></div>
+								<div class="carousel-item <?= $actives; ?>">
+									<?php
+										echo "<img id=".$row['title']." src='data:image;base64, ".Base64_encode($row["image"])."' style='height: 900px;'>";
+									?>
+									<div class="carousel-caption" style="padding: 0; left: 0%; right: 0%; margin-bottom: 40px;">
+										<div class="col-10 align-center align-top" style="margin: auto; padding: 0px;">
+											<div class="mbr-section-btn" buttons="0">
+												<a id="<?= $row['title']?>" class="info btn display-4 btn-dark " name="info" style=" margin: 10px; ">Info</a>
+												<a class="btn display-4 btn-dark " id="register " href="<?= $row['reg_link']?>" style="margin: 10px; ">Register</a>
+											</div>
+										</div>
 									</div>
 								</div>
-							</form>
-						</div>
-						<!-- Left and right controls -->
-						<a class="carousel-control-prev" href="#demo" data-slide="prev">
-							<span class="carousel-control-prev-icon"></span>
-						</a>
-						<a class="carousel-control-next" href="#demo" data-slide="next">
-							<span class="carousel-control-next-icon"></span>
-						</a>
-					</div>
-					<div class="carousel-caption" style="padding: 0; left: 0%; right: 0%; margin-bottom: 40px;">
-						<div class="col-10 align-center align-top" style="margin: auto; padding: 0px;">
-							<div class="mbr-section-btn" buttons="0">
-								<!-- <a class="btn display-4 btn-dark " href="#" name="info" id="info" style=" margin: 10px; ">Info</a> -->
-								<button id="info" type="button" class="btn btn-dark display-4" style=" margin: 10px; ">Info</button>
-								<a class="btn display-4 btn-dark " id="register " href=" # " style="margin: 10px; ">  Register </a>
+								<?php
+									$i++; }
+								?>
+								<form method="post">
+									<div class="bg-modal">
+										<div class="modal-contents animate" style="margin: auto;">
+											<span onclick="document.querySelector('.bg-modal').style.display='none';" class="close">&times;</span>
+											<div id="displaydata">
+												
+											</div>
+										</div>
+									</div>
+								</form>
 							</div>
+							<a id="prev" class="carousel-control-prev" href="#demo" data-slide="prev">
+								<span class="carousel-control-prev-icon"></span>
+							</a>
+							<a id="next" class="carousel-control-next" href="#demo" data-slide="next">
+								<span class="carousel-control-next-icon"></span>
+							</a>
 						</div>
-					</div>
-					<!-- end 6 -->
+					</form>
 				</div>
 			</div>
 		</div>
@@ -253,7 +250,23 @@
 	<div class="footer-copyright flex-center text-center py-1 " style="background-color:#22305f; ;color:white; ">© 2020 Copyright
 	</div>
 </footer>
-<?php
-	include(ajax.js);
-?>
+<script>
+		$(document).ready(function () {
+			$('.info').click(function (e) {
+				document.querySelector('.bg-modal').style.display = 'block';
+				e.preventDefault();
+				var infoid = $(this).attr('id');
+				alert(infoid);
+				$.ajax({
+					method: "post",
+					data: {infoid: infoid},
+					url: "info.php",
+					dataType: "html",
+					success: function (response) {
+						$('#displaydata').html(response);
+					}
+				});
+			})
+		});
+	</script>
 </html>

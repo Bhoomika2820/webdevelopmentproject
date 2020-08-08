@@ -1,9 +1,10 @@
 <?php
 	$conn = mysqli_connect("localhost", "root", "", "site");
-	$res = mysqli_query($conn, "SELECT * FROM candidate_visible");
+	if (isset($_POST['infoid'])) {
+	$val = $_POST['infoid'];
+	$res = mysqli_query($conn, "SELECT * FROM candidate_visible WHERE title='".$val."'");
 	if ($res) {
 		while ($row = mysqli_fetch_array($res)) {
-			echo "<script>img = document.getElementById(".$row['title'].".toString()); console.log(img.id)</script>";
 			echo '<label id="event_name " style="text-align:center; "><strong>Event Name</strong></label>
 			<div id="date ">
 				<label>Start Date: </label>
@@ -38,4 +39,8 @@
 	else {
 		echo "No info";
 	}
+}
+else {
+	die("Oh snap! Server issues!!");
+}
 ?>
