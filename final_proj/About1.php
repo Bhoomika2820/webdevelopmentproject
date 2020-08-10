@@ -8,7 +8,7 @@
 	<meta charset="UTF-8">
 	<!--To make site responsive -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="css/home.css">
+	<link rel="stylesheet" type="text/css" href="stylingcss/home.css">
 	<!--Including font awesome icons-->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<!-- JQuery -->
@@ -25,8 +25,8 @@
     <script src="info.php"></script>
 	<style>
 		.carousel-inner img {
-			width: 100%;
-			height: 100%;
+			width: 100vw;
+			height: 100vw;
 		}
 	</style>
 </head>
@@ -85,8 +85,8 @@
 									<div class="carousel-caption" style="padding: 0; left: 0%; right: 0%; margin-bottom: 40px;">
 										<div class="col-10 align-center align-top" style="margin: auto; padding: 0px;">
 											<div class="mbr-section-btn" buttons="0">
-												<a id="<?= $row['committee']?>" class="info btn display-4 btn-dark " name="info" style=" margin: 10px; ">Info</a>
-												<a class="btn display-4 btn-dark " id="register " href="<?= $row['reg_link']?>" style="margin: 10px; ">Register</a>
+												<a id="<?= $row['committee']?>" class="info btn display-4 btn-dark " style="background-color:rgb(0,0,0,0.5);"name="info" style=" margin: 10px; ">Info</a>
+												<a class="btn display-4 btn-dark " id="register " href="<?= $row['reg_link']?>" style="margin: 10px;background-color:rgb(0,0,0,0.5); ">Register</a>
 											</div>
 										</div>
 									</div>
@@ -209,7 +209,7 @@
 		</div>
 		<div class="row " style="padding:40px;box-shadow: 0px 10px 8px 2px #FF8C00; ">
 			<div class=" content " style="padding-left: 20px;width:66vw; ">
-				<a href="#" style=color:black;>
+				<a href="https://www.schoolandcollegelistings.com/IN/Mumbai/825831007532437/National-Service-Scheme-St.-Francis-Institute-of-Technology" style=color:black;>
 					<h1 class="committee_head ">NSS</h1>
 				</a>
 				<p>
@@ -235,7 +235,7 @@
 				<input id="username" type="text" placeholder="Enter Username" name="uname" required>
 				<label for="psw"><b>Password</b></label>
 				<input id="password" type="password" placeholder="Enter Password" name="psw" required>
-				<button id="login" name="login" class="button" type="submit">Login<i class="fa fa-sign-in" aria-hidden="true"></i></button>
+				<button id="login" name="login" class="button" type="submit">Login  <i class="fa fa-sign-in" aria-hidden="true"></i></button>
 			</div>
 		</form>
 	</div>

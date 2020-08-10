@@ -15,14 +15,19 @@
     $contact_name=$_POST["contact_person"];
     $contact_num=$_POST["phone_no"];
     $reg_link=$_POST["registration_link"];
+    /*
     $fileName = basename($_FILES["image"]["name"]); 
     $fileType = pathinfo($fileName, PATHINFO_EXTENSION);
     $image=$_FILES['image']['tmp_name'];
-    $imgContent = addslashes(file_get_contents($image));
-    if(isset()
+    $imgContent = addslashes(file_get_contents($image)); 
+*/
+    $imgContent=addslashes(file_get_contents($_FILES['image']['tmp_name']));
+     
+    if(isset($_POST["submit"]))
     {
         $sql="INSERT INTO advertise_committee (committee, start_time, end_time, event_category, event_name, caption, event_desc, host, contact_name, contact_num, reg_link,c_image) VALUES
-         ('$committee', '$start_time', '$end_time', '$event_category','$event_name', '$caption', '$event_desc', '$host', '$contact_name', '$contact_num', '$reg_link','$imgContent')";   
+         ('$committee', '$start_time', '$end_time', '$event_category','$event_name', '$caption', '$event_desc', '$host', '$contact_name', '$contact_num', '$reg_link','$imgContent')"; 
+        
         if(mysqli_query($conn,$sql)){ 
 
             echo'<script type="text/javascript">
@@ -34,11 +39,15 @@
         }
         else
         { 
+                echo($imgContent);
                 echo'<script type="text/javascript">
             
                 alert("File upload failed, please try again.");
                 window.location="add_event.php";
+               
                 </script>';
+
+                
         }  
     }
     mysqli_close($conn);

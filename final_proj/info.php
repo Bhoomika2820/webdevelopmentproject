@@ -5,33 +5,33 @@
 	$res = mysqli_query($conn, "SELECT * FROM advertise_committee WHERE committee='".$val."'");
 	if ($res) {
 		while ($row = mysqli_fetch_array($res)) {
-			echo '<label id="event_name" style="text-align:center; "><strong>'.$row["event_name"].'</strong></label>
+			echo '<label id="event_name" style="text-align:center;font-size:32px; "><strong>'.$row["event_name"].'</strong></label>
 				<div id="date ">
-					<label>Start Date: </label>
+					<label><strong>Start Date: </strong></label>
 					<label id="start_date">'.$row["start_time"].'</label>
 					<br>
-					<label>End Date: </label>
+					<label><strong>End Date: </strong></label>
 					<label id="end_date">'.$row["end_time"].'</label>
 				</div>
 				<div>
-					<label>Event Category: </label>
+					<label><strong>Event Category: </strong></label>
 					<label id="event_category">'.$row["event_category"].'</label>
 				</div>
 				<div>
-					<label>Information</label>
-					<label id="information">'.$row["event_desc"].'</label>
+					<label><strong><u>Information: </u></strong></label>
+					<pre id="information">'.$row["event_desc"].'</pre>
 				</div>
 				<div>
-					<label>Speaker</label>
+					<label><strong>Speaker: </strong></label>
 					<label id="speaker">'.$row["host"].'</label>
 				</div>
 				<div>
-					<label>Contact Person</label>
+					<label><strong><u>Contact Person</u> :</strong></label>
 					<br>
-					<label>Name : </label>
+					<label><strong>Name : </strong></label>
 					<label id="contact_name">'.$row["contact_name"].'</label>
 					<br>
-					<label>Phone No:</label>
+					<label><strong>Phone No:</strong></label>
 					<label id="phone_no">'.$row["contact_num"].'</label>
 				</div>';
 		}
